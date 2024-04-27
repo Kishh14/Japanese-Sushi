@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sushiman | Kishan Salvi</title>
-  <link rel="shortcut icon" href="./android-chrome-512x512.png" type="image/x-icon">
+  <link rel="shortcut icon" href="./assets/android-chrome-512x512.png" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -25,6 +25,14 @@
       </ul>
       <ul class="header__menu-mobile" data-aos="fade-down">
         <li><img src="assets/menu.svg" alt="menu"></li>
+      </ul>
+      <!-- Menu for small devices -->
+      <ul class="header__menu-mobile-links" data-aos="fade-down">
+        <li id="close-btn">X</li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#food">Food</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about-us">About Us</a></li>
       </ul>
     </nav>
   </header>
@@ -306,7 +314,21 @@
       </li>
     </ul>
   </footer>
-  <script type="module" src="js/script.js"></script>
+  <script>
+    const menuIcon = document.querySelector('.header__menu-mobile li img');
+    const mobileMenu = document.querySelector('.header__menu-mobile-links');
+    const closeBtn = document.getElementById('close-btn');
+
+    menuIcon.addEventListener('click', () => {
+      mobileMenu.style.display = 'block';
+      menuIcon.style.display = 'none';
+    })
+
+    closeBtn.addEventListener('click', () => {
+      menuIcon.style.display = 'block';
+      mobileMenu.style.display = 'none';
+    })
+  </script>
 </body>
 
 </html>
